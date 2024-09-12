@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" className="!scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
@@ -7,6 +7,22 @@
   <title>Verly's Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    @keyframes appear{
+      from{
+        opacity: 0;
+        scale: 0.5;
+      }
+      to{
+        opacity: 1;
+        scale: 1;
+      }
+    }
+
+    .block{
+      animation: appear linear;
+      animation-timeline: view();
+      animation-range: entry 0% cover 40%;
+    }
     body {
       background-image: url('Untitled design (1).png');
       background-size: contain;
@@ -32,7 +48,7 @@
         background-size: contain;
         background-position: center;
         background-attachment: fixed;
-        min-height: 50vh;
+        min-height: 100vh;
       }
 
     }
@@ -89,8 +105,8 @@
   </style>
 </head>
 
-<body class="font-sans antialiased text-gray-900">
-
+<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0" class="font-sans antialiased text-gray-900">
+  <div class="relative overflow-x-hidden">
   <!-- Navbar -->
   <nav class="fixed top-0 left-0 w-full py-1 lg:py-5 backdrop-blur-lg bg-white/50 z-10 shadow-md">
     <div class="container mx-auto flex justify-between items-center px-6">
@@ -121,20 +137,20 @@
   <!-- Hero Section -->
   <section id="home" class="flex justify-between items-center min-h-screen px-4 lg:px-16">
     <!-- Social Media Icons -->
-    <div class="space-y-6 mr-5 lg:mr-10">
+    <div class="space-y-3 lg:space-y-6 mr-5 lg:mr-10">
       <a href="https://github.com/dcozxa" target="_blank" class="block">
-        <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub" class="h-8 w-8" />
+        <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub" class="h-7 lg:h-8 w-7 lg:w-8" />
       </a>
       <a href="https://www.instagram.com/verlyr.a/?hl=id" target="_blank" class="block">
-        <img src="https://img.icons8.com/ios-filled/50/000000/instagram-new.png" alt="Instagram" class="h-8 w-8" />
+        <img src="https://img.icons8.com/ios-filled/50/000000/instagram-new.png" alt="Instagram" class="h-7 lg:h-8 w-7 lg:w-8" />
       </a>
       <a href="https://www.linkedin.com/in/verly-rahma-aulia-31450b302/" target="_blank" class="block">
-        <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" class="h-8 w-8" />
+        <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" class="h-7 lg:h-8 w-7 lg:w-8" />
       </a>
     </div>
 
-    <!-- Text section -->
-     <div class="text-left w-full md:w-1/2 lg:w-1/3">
+    <!-- Text Introduction -->
+    <div class="text-left w-full md:w-1/2 lg:w-1/3">
       <h1 class="text-sm lg:text-xl font-semibold text-[#000000]">Hello, I'm</h1>
       <h1 class="text-4xl lg:text-5xl font-bold text-[#ffffff]">Verly Rahma Aulia<span class="text-[#Ffffff]">👋</span></h1>
       <p class="mt-2 text-sm lg:text-lg font-semibold text-[#ffffff]">Informatics Engineering Student |</p>
@@ -153,7 +169,7 @@
   <section id="about" class="pt-36 pb-32 bg-white">
     <div class="container">
       <div class="flex flex-wrap items-center">
-        <!-- Foto di sebelah teks About Me -->
+        
         <div class="w-full px-4 mb-10 lg:w-1/2 lg:mb-0">
           <img src="WhatsApp Image 2024-09-12 at 15.50.11_146ca592.jpg" alt="Your Photo"
             class="rounded-lg shadow-lg w-full lg:w-2/3 mx-auto">
@@ -232,7 +248,7 @@
   <section id="projects" class="py-16 bg-gradient-to-b from-[#f8c146] to-[#e77509]">
     <div class="container mx-auto text-center">
         <div class="container mx-auto text-center">
-            <p class="font-mono text-2xl lg:text-4xl font-bold text-white mb-8">Stay tuned for upcoming projects!</p>
+            <p class="font-mono text-2xl lg:text-4xl font-bold text-white mb-8">Stay tuned for upcoming projects! </p>
         </div>
     </div>
   </section>
@@ -241,8 +257,8 @@
   <footer class="bg-[#545454] text-white py-0 lg:py-4 text-center">
     <p class="text-center text-sm lg:text-base">&copy; 2024 Verly R. A. All Rights Reserved.</p>
   </footer>
-
-  <!-- JavaScript -->
+  </div>
+  <!-- JavaScript for Hamburger Menu Animation -->
   <script>
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
